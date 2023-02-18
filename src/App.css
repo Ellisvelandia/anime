@@ -6,6 +6,12 @@ body {
   background: #2a2c31 !important;
 }
 
+.flex__center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 h1 {
   color: hsl(0, 0%, 28%);
   font-weight: bold !important;
