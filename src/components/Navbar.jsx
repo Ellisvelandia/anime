@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Divide as Hamburger } from "hamburger-react";
 import eye from "../assets/eye.webp";
 import Links from "./Links";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
@@ -18,12 +19,21 @@ const Navbar = () => {
           onClick={() => setToggleMenu(!toggleMenu)}
         />
         <div className="w-full justify-center flex">
-          <img
-            src={eye}
-            alt="anime/logo"
-            className=" 
-            h-36 w-40 justify-center"
-          />
+          <Link
+            activeClass="active"
+            to="bottom"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >
+            <img
+              src={eye}
+              alt="anime/logo"
+              className="h-36 w-40 justify-center cursor-pointer"
+              id="top"
+            />
+          </Link>
         </div>
         {isOpen && <Links />}
       </div>
