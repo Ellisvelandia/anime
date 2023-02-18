@@ -3,9 +3,45 @@ body {
   margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
-  background: #2a2c31!important;
+  background: #2a2c31 !important;
 }
 
+h1 {
+  color: hsl(0, 0%, 28%);
+  font-weight: bold !important;
+  letter-spacing: 7px !important;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+h1 {
+  background: linear-gradient(
+    to right,
+    hsl(0, 0%, 30%) 0,
+    hsl(0, 0%, 100%) 10%,
+    hsl(0, 0%, 30%) 20%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite linear;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 600px;
+  }
+  100% {
+    background-position: 600px;
+  }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fc0c0c !important;
+}
 
 .container .media-container .media {
   height: 220px;
@@ -48,9 +84,6 @@ body {
   object-fit: fill;
   border: none;
   -webkit-text-size-adjust: 100%;
-  background: #000
-    url(https://chainsawman.dog/assets/img/common/deco/deco_dotbg.svg) repeat
-    left top/20px;
 }
 
 .container .popup-media button {
@@ -63,4 +96,11 @@ body {
   cursor: pointer;
   color: #fc0c0c;
   user-select: none;
+}
+
+@media screen and (max-width: 912px) {
+  .container .popup-media :is(img, iframe) {
+    max-width: 100%;
+    max-height: 50%;
+  }
 }
