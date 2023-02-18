@@ -1,12 +1,13 @@
 import React from "react";
 import eye from "../assets/eye.webp";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link as Links, animateScroll as scroll } from "react-scroll";
 import { socials } from "../data/socialData";
 import { SocialIcon } from "react-social-icons";
+import { Link } from "react-router-dom";
 
 const Navlinks = [
   { name: "Home", to: "/" },
-  { name: "MostPopular", to: "/mostpopular" },
+  { name: "Manga", to: "/manga" },
   { name: "Movies", to: "/movies" },
 ];
 
@@ -21,7 +22,7 @@ const Footer = () => {
       >
         <div className="relative z-10">
           <div className="mb-8 pb-8 border-b border-[rgba(255,255,255,.15)] border-solid flex items-center">
-            <Link
+            <Links
               activeClass="active"
               to="top"
               spy={true}
@@ -33,7 +34,7 @@ const Footer = () => {
                 alt="eye/logo"
                 className="float-left h-36 w-40 cursor-pointer inline-block"
               />
-            </Link>
+            </Links>
             <div className="float-left">
               <div className="inline-block md:pl-4 pl-2 border-l-2 border-solid border-[rgba(255,255,255,.15)] text-base">
                 <div className="float-left h-11 flex justify-items-start items-center">

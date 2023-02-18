@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { BsFillPlayFill, BsPauseFill } from "react-icons/bs";
-import video from "../../assets/video.mp4";
+import video from "../../../assets/video.mp4";
 
 const Intro = () => {
   const [playVideo, setPlayVideo] = useState(false);

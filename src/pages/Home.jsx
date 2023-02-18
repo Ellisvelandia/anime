@@ -1,7 +1,7 @@
 import React from "react";
-import Intro from "../components/intro/Intro";
-import Hero from "../components/top/Hero";
-import Recommendations from "../components/recommendations/Recommendations";
+import Intro from "../components/homesContainer/intro/Intro";
+import Hero from "../components/homesContainer/top/Hero";
+import Recommendations from "../components/homesContainer/recommendations/Recommendations";
 
 const Home = () => {
   return (

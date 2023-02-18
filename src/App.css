@@ -2,12 +2,17 @@ body {
   max-width: 100%;
   margin: 0 auto;
   padding: 0;
+  list-style-type: none;
   box-sizing: border-box;
   background: #2a2c31 !important;
 }
 
-body::after {
-  background: "rgba(0,0,0,0.85)";
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .flex__center {
@@ -121,4 +126,28 @@ footer {
   background: #2a2c31
     url("https://i.pinimg.com/originals/be/b4/92/beb492975a13b88ce2d922ff881ffa3a.jpg")
     top center no-repeat;
+}
+
+/* //swiper manga*/
+
+.swiper-slide {
+  width: 37rem;
+  height: 42rem;
+  position: relative;
+}
+
+.swiper-slide img {
+  width: 37rem;
+  height: 40rem;
+  border-radius: 0.5rem;
+  object-fit: fill;
+}
+
+.swiper-slide-shadow-left,
+.swiper-slide-shadow-right {
+  display: none;
+}
+
+.swiper-pagination .swiper-pagination-bullet {
+  display: none;
 }

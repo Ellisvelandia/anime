@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Divide as Hamburger } from "hamburger-react";
 import eye from "../assets/eye.webp";
-import Links from "./Links";
+import Links from "./homesContainer/Links";
 import { Link, animateScroll as scroll } from "react-scroll";
 
 const Navbar = () => {
