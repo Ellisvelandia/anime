@@ -110,3 +110,11 @@ h1 {
     max-height: 50%;
   }
 }
+
+footer {
+  padding: 0px 0 0;
+  position: relative;
+  background: #2a2c31 url("https://wallpaperaccess.com/full/149241.jpg") top center no-repeat;
+  background-size: fill;
+}
+

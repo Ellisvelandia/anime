@@ -23,21 +23,35 @@ const Intro = () => {
           background: "rgba(0,0,0,0.65)",
         }}
       >
-        <div
-          className="w-full h-full rounded flex__center"
-          onClick={() => {
-            setPlayVideo(!playVideo);
-            if (playVideo) {
-              vidRef.current.pause();
-            } else {
-              vidRef.current.play();
-            }
-          }}
-        >
+        <div className="w-full h-full rounded flex__center">
           {playVideo ? (
-            <BsPauseFill color="#fff" fontSize={40} />
+            <BsPauseFill
+              color="#fff"
+              fontSize={40}
+              className="cursor-pointer"
+              onClick={() => {
+                setPlayVideo(!playVideo);
+                if (playVideo) {
+                  vidRef.current.pause();
+                } else {
+                  vidRef.current.play();
+                }
+              }}
+            />
           ) : (
-            <BsFillPlayFill color="#fff" fontSize={40} />
+            <BsFillPlayFill
+              color="#fff"
+              fontSize={40}
+              className="cursor-pointer"
+              onClick={() => {
+                setPlayVideo(!playVideo);
+                if (playVideo) {
+                  vidRef.current.pause();
+                } else {
+                  vidRef.current.play();
+                }
+              }}
+            />
           )}
         </div>
       </div>
