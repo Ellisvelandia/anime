@@ -20,7 +20,7 @@ const Links = () => {
             <li>
               <Link
                 to={to}
-                className="tracking-wide text-center text-white cursor-pointer hover:text-[#e21f1f] delay-100"
+                className="tracking-wide text-center text-white cursor-pointer hover:text-[#e21f1f] delay-100 opacity-60"
               >
                 {name}
               </Link>

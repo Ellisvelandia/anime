@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import { Footer, Navbar } from "./components";
-import { Home, Manga } from "./pages";
+import { Home, Manga, Movies } from "./pages";
 
 const App = () => {
   return (
@@ -11,6 +11,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/manga" element={<Manga />} />
+        <Route path="/movies" element={<Movies />} />
       </Routes>
       <Footer />
     </BrowserRouter>

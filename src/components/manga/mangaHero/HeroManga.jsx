@@ -23,7 +23,7 @@ const HeroManga = () => {
       </h1>
       <div className="grid container lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-evenly gap-6">
         {mangas.map((manga, index) => (
-          <div className="w-ful text-white h-auto my-4 relative" key={index}>
+          <div className="w-ful text-white h-auto my-4 relative hover:scale-105 delay-300 ease-in-out transition" key={index}>
             <img
               src={manga.images.webp.large_image_url}
               alt="comics"

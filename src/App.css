@@ -152,6 +152,9 @@ footer {
   display: none;
 } */
 
-.text-shw {
-  text-shadow: 1px 1px 3px rgb(0 0 0 / 29%), 2px 4px 7px rgb(73 64 125 / 35%);
+.size_image {
+  width: 37rem;
+  height: 40rem;
+  border-radius: 0.5rem;
+  object-fit: fill;
 }
