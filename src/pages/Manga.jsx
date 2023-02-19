@@ -5,8 +5,8 @@ import MangaVideo from "../components/manga/mangaVideos/MangaVideo";
 const Manga = () => {
   return (
     <div className="my-8">
-      <HeroManga />
       <MangaVideo />
+      <HeroManga />
     </div>
   );
 };

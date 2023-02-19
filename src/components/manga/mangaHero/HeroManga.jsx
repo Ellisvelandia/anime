@@ -11,6 +11,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import "swiper/css/keyboard";
+import "swiper/css/navigation";
 
 const HeroManga = () => {
   const [mangas, setMangas] = useState([]);
@@ -24,7 +25,7 @@ const HeroManga = () => {
   }, []);
 
   return (
-    <div className="min-h-[50vh] w-full mx-auto text-white container my-20 text-center">
+    <div className="min-h-[50vh] w-full mx-auto text-white container mt-20 text-center">
       <h1 className="heading w-full md:text-4xl text-lg md:text-start px-6 text-center my-4">
         Manga Gallery
       </h1>
@@ -45,15 +46,15 @@ const HeroManga = () => {
               <img
                 src={manga.images.webp.large_image_url}
                 alt="comics"
-                className="object-cover m-auto w-[350px] h-[450px] opacity-70 hover:opacity-100"
+                className="relative object-cover m-auto w-[350px] h-[450px] opacity-40 hover:opacity-100"
                 loading="lazy"
               />
               <h2 className="text-center text-2xl">{manga.title}</h2>
-              <div className="w-full lg:px-16 px-2 flex text-base justify-center md:text-center text-justify my-2">
-                <p>{manga.background}</p>
+              <div className="w-full flex justify-center lg:px-16 px-2 md:text-lg text-sm text-justify my-2">
+                <p className="absolute top-5 left-1-/2 overflow-hidden text-shw lg:w-[35%] w-full px-2">{manga.background}</p>
               </div>
               <div className="flex justify-center items-center w-full gap-2">
-                <div className="flex justify-center items-center  gap-1">
+                <div className="flex justify-center items-center gap-1">
                   <BsStarFill className="text-yellow-400 " />
                   <div></div>
                   <p>{manga.favorites}</p>
