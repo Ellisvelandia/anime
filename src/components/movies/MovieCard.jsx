@@ -28,6 +28,7 @@ const MovieCard = () => {
             frameBorder="0"
             allowFullScreen
             className="w-full lg:h-[715px] aspect-video px-2 object-fill"
+            loading="lazy"
           ></iframe>
         </div>
         <div className="lg:w-1/2 w-full min-h-[50vh] h-full rounded-md justify-end flex-col flex  items-end">
