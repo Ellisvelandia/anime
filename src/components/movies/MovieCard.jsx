@@ -1,6 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Link, useParams } from "react-router-dom";
 
 const MovieCard = () => {
+  const [videos, setVideos] = useState({});
+  const { _id } = useParams();
+
+  useEffect(() => {
+    const getVideos = async () => {
+      const res = await axios.get(
+        `https://anime-jqtu.onrender.com/anime/getmovie/${_id}`
+      );
+      setVideos(res.data.movie);
+    };
+    getVideos();
+  }, [_id]);
+
   return (
     <div className="min-h-[50vh] flex flex-col h-auto lg:px-8">
       <div className="flex bg-[rgba(0,0,0,0.3)] rounded-sm w-full"></div>
@@ -9,26 +24,26 @@ const MovieCard = () => {
           <iframe
             width="560"
             height="100%"
-            src="https://henaojara2.com/?trembed=3&amp;trid=587&amp;trtype=1"
-            frameborder="0"
-            allowfullscreen=""
-            className="w-full lg:h-[715px] aspect-video px-2"
+            src={videos.movies}
+            frameBorder="0"
+            allowFullScreen
+            className="w-full lg:h-[715px] aspect-video px-2 object-fill"
           ></iframe>
         </div>
         <div className="lg:w-1/2 w-full min-h-[50vh] h-full rounded-md justify-end flex-col flex  items-end">
           <div className="z-10 p-5 mb-5 w-full ">
             <span className="mr-3 align-middle inline-block w-full">
               <h2 className="leading-9 p-2 mb-0 max-h-none font-light  text-2xl text-blue-600 text-center">
-                Kimi No Na Wa Español Latino HD
+                {videos.title}
               </h2>
             </span>
             <div className="mb-3 text-base leading-5 pt-1 opacity-80 w-full text-center text-white">
-              kimi no na wa pelicula completa español latino HD
+              {videos.subTitle}
             </div>
             <div className="flex justify-center items-start w-full h-full">
               <figure className="align-top h-full">
                 <img
-                  src="https://henaojara2.com/wp-content/uploads/2020/02/Kimi-No-Na-Wa-185x278.jpg"
+                  src={videos.poster}
                   alt=""
                   width="185"
                   height="278"
@@ -38,24 +53,18 @@ const MovieCard = () => {
               </figure>
             </div>
             <div className="max-h-64 text-xl overflow-auto break-words font-light mt-4">
-              <p className="m-0 text-white">
-                Ha pasado un mes desde que un cometa que visita la Tierra cada
-                mil años se avistara desde Japón. Mitsuha es una estudiante que
-                se lamenta de su vida en el campo junto a su hermana pequeña, su
-                abuela y su padre, un político al que nunca ve. Detesta las
-                pintorescas costumbres de su familia y sueña con el maravilloso
-                estilo de vida de los habitantes de Tokyo. Por su parte, Taki es
-                un estudiante que vive en Tokyo, tiene un trabajo a tiempo
-                parcial en un restaurante italiano y necesita alejarse de su
-                familia. Una noche, Mitsuha sueña que es un chico de Tokyo y
-                Taki sueña que es una chica que vive en el campo. ¿Cuál es el
-                secreto que se oculta tras los sueños de dos personas que a
-                pesar de que no se conocen de nada parecen buscarse
-                desesperadamente?
-              </p>
+              <p className="m-0 text-white">{videos.desc}</p>
             </div>
           </div>
         </div>
+      </div>
+      <div className="flex justify-center my-4">
+        <Link
+          to="/movies"
+          className="flex bg-[#C90000] py-2 md:mb-0 justify-center px-6 rounded mt-2 text-white hover:bg-[#d80d0d] drop-shadow-2xl transition-all duration-200 active:scale-90"
+        >
+          &larr; Back
+        </Link>
       </div>
     </div>
   );

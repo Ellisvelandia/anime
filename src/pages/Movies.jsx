@@ -1,12 +1,12 @@
-import React from 'react'
-import MovieCard from '../components/movies/MovieCard'
+import React from "react";
+import MovieList from "../components/movies/MovieList";
 
 const Movies = () => {
   return (
-    <div className='my-8'>
-      <MovieCard/>
+    <div className="my-8">
+      <MovieList />
     </div>
-  )
-}
+  );
+};
 
-export default Movies
+export default Movies;
